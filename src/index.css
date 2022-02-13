@@ -1,13 +1,273 @@
 body {
+  white-space: nowrap;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  list-style: none;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgb(63, 62, 62);
+  color: black;
+}
+
+th {
+  padding: 0.75rem;
+  background-color: rgb(63, 62, 62);
+  color: white;
+}
+
+td {
+  padding: 0.75rem;
+}
+
+*:focus {
+  outline: none;
+}
+
+select {
+  border-bottom: 1px solid whitesmoke;
+}
+
+.circle {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: rgb(201, 201, 21);
+}
+
+/* LOGIN  */
+
+.loginScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.loginContainer {
+  text-align: center;
+  color: white;
+  background-color: steelblue;
+  padding: 2rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm > * {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.loginForm input:focus {
+  outline: none;
+}
+
+.loginForm button {
+  color: white;
+  cursor: pointer;
+  background-color: rgb(9, 192, 9);
+}
+
+.loginForm button:hover {
+  background-color: green;
+}
+
+/* NAVIGATION BAR  */
+
+.navigationBar {
+  color: white;
+  width: 100%;
+  background-color: steelblue;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigationBar > * {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.navigationBar > * > li {
+  cursor: pointer;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+}
+
+.navigationBar li:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* BODY  */
+
+.mainBody {
+  display: flex;
+}
+
+.allVacationsContainer > * {
+  margin: 1rem;
+}
+
+.allVacationsContainer {
+  color: steelblue;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tableActions {
+  display: flex;
+  align-items: center;
+}
+
+.tableActions > * {
+  padding: 0.5rem;
+}
+
+/* NAVIGATION DROP LIST  */
+
+.navigationDropList {
+  background-color: steelblue;
+  height: 100vh;
+}
+
+.navigationDropList > * {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid whitesmoke;
+  cursor: pointer;
+}
+
+.navigationDropList > *:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* INFORMATION  */
+.informationContainer {
+  width: 100%;
+  display: flex;
+  color: steelblue;
+}
+.informationContainer > * > * {
+  margin: 1rem;
+}
+
+.col-1 {
+  width: 100%;
+}
+
+.statusRow {
+  display: flex;
+}
+
+.viewMore {
+  text-align: right;
+  padding: 0.5rem;
+}
+
+/* LATEST VACATIONS  */
+
+/* UPLOAD AREA  */
+.uploadArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  height: 45vh;
+}
+
+/* ADD NEW VACATION  */
+
+.addNewVacationWidget {
+  margin: 1rem auto 5rem;
+  color: white;
+  padding: 1rem;
+  width: 40%;
+  border-radius: 1rem;
+  background-color: steelblue;
+}
+
+.addNewVacationActions {
+  display: flex;
+  align-items: center;
+}
+
+.addNewVacationActions > * {
+  padding: 0.5rem;
+}
+
+.newVacationForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.newVacationForm > * {
+  background-color: steelblue;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0.25rem;
+}
+
+.newVacationForm label {
+  color: rgba(255, 255, 255, 0.678);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.Button {
+  color: rgb(92, 196, 92);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.Button:hover {
+  color: white;
 }

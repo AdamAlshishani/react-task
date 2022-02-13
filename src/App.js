@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Dashboard from "./components/Dashboard";
+import VACATIONS from "./data/vacations";
+import LoginScreen from "./components/login/LoginScreen";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userName, setuserName] = useState("Adam");
+
+  useEffect(() => {
+    localStorage.setItem("VACATIONS", JSON.stringify(VACATIONS));
+  }, []);
+
+  function handleLogin(userName) {
+    setLoggedIn(true);
+    setuserName(userName);
+    localStorage.setItem("currentUser", JSON.stringify(userName));
+  }
+
+  function handleSignOut() {
+    setLoggedIn(false);
+  }
+
+  // return <Dashboard userName={userName} />;
+  return loggedIn ? (
+    <Dashboard userName={userName} handleSignOut={handleSignOut} />
+  ) : (
+    <LoginScreen handleLogin={handleLogin} />
   );
 }
 
